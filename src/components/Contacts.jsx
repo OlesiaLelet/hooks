@@ -53,7 +53,7 @@ const Contacts = () => {
    const {value} = event.target;
    console.log(value);
    setSearch(value);
-   filterContacts(contacts, value, isFemale, isMale);
+   filterContacts(contacts, value, isFemale, isMale, isUndefined);
    
    }
    const filterContacts = (array, searchStr, isWoman, isMan, isUndefined) => {
@@ -71,14 +71,14 @@ const Contacts = () => {
   const handlerFilterFemale = (event) => {
     const {checked} = event.target;
     setIsFemale(checked);
-    filterContacts(contacts, search, checked, isMale);
+    filterContacts(contacts, search, checked, isMale, isUndefined);
    }
 
 
    const handlerFilterMale = (event) => {
     const {checked} = event.target;
     setIsMale(checked);
-    filterContacts(contacts, search, isFemale, checked);
+    filterContacts(contacts, search, isFemale, checked, isUndefined);
    }
    const handlerFilterUndefined = (event) => {
     const {checked} = event.target;
